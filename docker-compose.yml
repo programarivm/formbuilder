@@ -2,8 +2,8 @@ version: "3.8"
 
 services:
   node:
-      build: .
       container_name: formbuilder_node
+      image: "node:14"
       tty: true
       volumes:
           - ./:/usr/src/app
