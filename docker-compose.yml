@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  node:
+      build: .
+      container_name: formbuilder_node
+      tty: true
+      volumes:
+          - ./:/usr/src/app
+      working_dir: /usr/src/app
