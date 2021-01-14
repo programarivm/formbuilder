@@ -18,6 +18,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { mainListItems } from './listItems';
 import Elements from './Elements';
+import Counter from './Counter';
 
 function Copyright() {
   return (
@@ -167,6 +168,9 @@ export default function Dashboard() {
               </Paper>
             </Grid>
           </Grid>
+          <Box pt={4}>
+            <Counter />
+          </Box>
           <Box pt={4}>
             <Copyright />
           </Box>
