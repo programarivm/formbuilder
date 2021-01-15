@@ -16,9 +16,10 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { mainListItems } from './listItems';
+import MainListItems from './MainListItems';
 import Elements from './Elements';
 import Counter from './Counter';
+import InputDialog from './InputDialog';
 
 function Copyright() {
   return (
@@ -156,7 +157,9 @@ export default function Dashboard() {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
+        <List>
+          <MainListItems />
+        </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -176,6 +179,7 @@ export default function Dashboard() {
           </Box>
         </Container>
       </main>
+      <InputDialog />
     </div>
   );
 }
