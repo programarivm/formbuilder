@@ -9,12 +9,17 @@ const reducer = (state = initialState, action) => {
     case inputActionTypes.ADD:
       return {
         ...state,
-        open: true,
+        open: false,
       };
     case inputActionTypes.CANCEL:
       return {
         ...state,
         open: false,
+      };
+    case inputActionTypes.CLICK:
+      return {
+        ...state,
+        open: true,
       };
     default:
       return state;

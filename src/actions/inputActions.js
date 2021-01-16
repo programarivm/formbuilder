@@ -7,3 +7,7 @@ export const add = () => ({
 export const cancel = () => ({
   type: inputActionTypes.CANCEL
 });
+
+export const click = () => ({
+  type: inputActionTypes.CLICK
+});

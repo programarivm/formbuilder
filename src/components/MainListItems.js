@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-import { add as addInput } from "../actions/inputActions";
+import { click as clickInput } from "../actions/inputActions";
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -13,7 +13,7 @@ const MainListItems = () => {
 
   return (
     <div>
-      <ListItem button onClick={() => dispatch(addInput())}>
+      <ListItem button onClick={() => dispatch(clickInput())}>
         <ListItemIcon>
           <TextFieldsIcon />
         </ListItemIcon>
