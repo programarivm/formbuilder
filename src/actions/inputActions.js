@@ -1,7 +1,8 @@
 import inputActionTypes from '../constants/inputActionTypes'
 
-export const add = () => ({
-  type: inputActionTypes.ADD
+export const add = (payload) => ({
+  type: inputActionTypes.ADD,
+  payload: payload
 });
 
 export const cancel = () => ({

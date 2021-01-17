@@ -2,6 +2,7 @@ import inputActionTypes from '../constants/inputActionTypes';
 
 const initialState = {
   open: false,
+  items: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,6 +11,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         open: false,
+        items: [...state.items, action.payload]
       };
     case inputActionTypes.CANCEL:
       return {
