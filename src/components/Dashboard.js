@@ -19,6 +19,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import MainListItems from './MainListItems';
 import Elements from './Elements';
 import InputDialog from './InputDialog';
+import SelectDialog from './SelectDialog';
 import TextareaDialog from './TextareaDialog';
 
 function Copyright() {
@@ -177,6 +178,7 @@ export default function Dashboard() {
         </Container>
       </main>
       <InputDialog />
+      <SelectDialog />
       <TextareaDialog />
     </div>
   );

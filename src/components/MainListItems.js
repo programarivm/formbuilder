@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
 import { click as clickInput } from "../actions/inputActions";
+import { click as clickSelect } from "../actions/selectActions";
 import { click as clickTextarea } from "../actions/textareaActions";
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -20,7 +21,7 @@ const MainListItems = () => {
         </ListItemIcon>
         <ListItemText primary="Input" />
       </ListItem>
-      <ListItem button>
+      <ListItem button onClick={() => dispatch(clickSelect())}>
         <ListItemIcon>
           <ListIcon />
         </ListItemIcon>
