@@ -1,7 +1,7 @@
 const inputActionTypes = {
-  ADD: 'ADD',
-  CANCEL: 'CANCEL',
-  CLICK: 'CLICK'
+  ADD: 'ADD_INPUT',
+  CANCEL: 'CANCEL_INPUT',
+  CLICK: 'CLICK_INPUT'
 };
 
 export default inputActionTypes;
