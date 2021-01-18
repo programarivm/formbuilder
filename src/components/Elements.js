@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { useSelector } from "react-redux";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -6,19 +7,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 
-// Generate Order Data
-function createData(id, tag, name) {
-  return { id, tag, name };
-}
-
-const rows = [
-  createData(0, '<input>', 'username'),
-  createData(1, '<input>', 'email'),
-  createData(3, '<select>', 'browser'),
-  createData(2, '<textarea>', 'comments'),
-];
-
 export default function Elements() {
+  const state = useSelector(state => state);
+
   return (
     <React.Fragment>
       <Title>Form Elements</Title>
@@ -30,9 +21,21 @@ export default function Elements() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell><code>{row.tag}</code></TableCell>
+          {state.input.items.map((row, i) => (
+            <TableRow key={i}>
+              <TableCell><code>&lt;input&gt;</code></TableCell>
+              <TableCell>{row.name}</TableCell>
+            </TableRow>
+          ))}
+          {state.select.items.map((row, i) => (
+            <TableRow key={i}>
+              <TableCell><code>&lt;select&gt;</code></TableCell>
+              <TableCell>{row.name}</TableCell>
+            </TableRow>
+          ))}
+          {state.textarea.items.map((row, i) => (
+            <TableRow key={i}>
+              <TableCell><code>&lt;textarea&gt;</code></TableCell>
               <TableCell>{row.name}</TableCell>
             </TableRow>
           ))}
