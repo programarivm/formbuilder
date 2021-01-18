@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { add as addInput, cancel as cancelInput } from "../actions/inputActions";
+import htmlTagTypes from '../constants/htmlTagTypes';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -10,7 +11,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function InputDialog() {
   const [state, setState] = useState({
-    name: ''
+    name: '',
+    type: htmlTagTypes.INPUT
   });
 
   const open = useSelector(state => state.input.open);

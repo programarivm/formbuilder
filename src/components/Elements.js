@@ -10,6 +10,12 @@ import Title from './Title';
 export default function Elements() {
   const state = useSelector(state => state);
 
+  const elems = [
+    ...state.input.items,
+    ...state.select.items,
+    ...state.textarea.items
+  ];
+
   return (
     <React.Fragment>
       <Title>Form Elements</Title>
@@ -21,21 +27,9 @@ export default function Elements() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {state.input.items.map((row, i) => (
+          {elems.map((row, i) => (
             <TableRow key={i}>
-              <TableCell><code>&lt;input&gt;</code></TableCell>
-              <TableCell>{row.name}</TableCell>
-            </TableRow>
-          ))}
-          {state.select.items.map((row, i) => (
-            <TableRow key={i}>
-              <TableCell><code>&lt;select&gt;</code></TableCell>
-              <TableCell>{row.name}</TableCell>
-            </TableRow>
-          ))}
-          {state.textarea.items.map((row, i) => (
-            <TableRow key={i}>
-              <TableCell><code>&lt;textarea&gt;</code></TableCell>
+              <TableCell><code>&lt;{row.type.toLowerCase()}&gt;</code></TableCell>
               <TableCell>{row.name}</TableCell>
             </TableRow>
           ))}

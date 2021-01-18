@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { add as addTextarea, cancel as cancelTextarea } from "../actions/textareaActions";
+import htmlTagTypes from '../constants/htmlTagTypes';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -10,7 +11,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function TextareaDialog() {
   const [state, setState] = useState({
-    name: ''
+    name: '',
+    type: htmlTagTypes.TEXTAREA
   });
 
   const open = useSelector(state => state.textarea.open);
