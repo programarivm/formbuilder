@@ -6,9 +6,9 @@ export const add = (payload) => ({
 });
 
 export const cancel = () => ({
-  type: inputActionTypes.CANCEL
+  type: inputActionTypes.CLOSE_ADD_DIALOG
 });
 
 export const click = () => ({
-  type: inputActionTypes.CLICK
+  type: inputActionTypes.OPEN_ADD_DIALOG
 });

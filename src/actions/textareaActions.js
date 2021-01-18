@@ -6,9 +6,9 @@ export const add = (payload) => ({
 });
 
 export const cancel = () => ({
-  type: textareaActionTypes.CANCEL
+  type: textareaActionTypes.CLOSE_ADD_DIALOG
 });
 
 export const click = () => ({
-  type: textareaActionTypes.CLICK
+  type: textareaActionTypes.OPEN_ADD_DIALOG
 });

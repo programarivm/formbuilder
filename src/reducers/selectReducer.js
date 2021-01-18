@@ -13,12 +13,12 @@ const reducer = (state = initialState, action) => {
         open: false,
         items: [...state.items, action.payload]
       };
-    case selectActionTypes.CANCEL:
+    case selectActionTypes.CLOSE_ADD_DIALOG:
       return {
         ...state,
         open: false,
       };
-    case selectActionTypes.CLICK:
+    case selectActionTypes.OPEN_ADD_DIALOG:
       return {
         ...state,
         open: true,

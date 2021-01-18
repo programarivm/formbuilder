@@ -13,12 +13,12 @@ const reducer = (state = initialState, action) => {
         open: false,
         items: [...state.items, action.payload]
       };
-    case textareaActionTypes.CANCEL:
+    case textareaActionTypes.CLOSE_ADD_DIALOG:
       return {
         ...state,
         open: false,
       };
-    case textareaActionTypes.CLICK:
+    case textareaActionTypes.OPEN_ADD_DIALOG:
       return {
         ...state,
         open: true,
