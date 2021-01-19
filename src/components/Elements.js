@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { del as deleteInput } from "../actions/inputActions";
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Table from '@material-ui/core/Table';
@@ -21,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Elements() {
   const classes = useStyles();
+
+  const dispatch = useDispatch();
 
   const state = useSelector(state => state);
 
@@ -51,7 +54,11 @@ export default function Elements() {
                 {row.name}
               </TableCell>
               <TableCell>
-                <IconButton aria-label="delete" className={classes.margin}>
+                <IconButton
+                  aria-label="delete"
+                  className={classes.margin}
+                  onClick={() => dispatch(deleteInput(i))}
+                >
                   <DeleteIcon />
                 </IconButton>
               </TableCell>

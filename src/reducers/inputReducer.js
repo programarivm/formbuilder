@@ -18,6 +18,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         open: false,
       };
+    case inputActionTypes.DELETE:
+      return {
+        ...state,
+        items: state.items.slice(0, action.payload).concat(state.items.slice(action.payload + 1))
+      };
     case inputActionTypes.OPEN_ADD_DIALOG:
       return {
         ...state,

@@ -1,3 +1,4 @@
+
 import inputActionTypes from '../constants/inputActionTypes'
 
 export const add = (payload) => ({
@@ -11,4 +12,9 @@ export const cancel = () => ({
 
 export const click = () => ({
   type: inputActionTypes.OPEN_ADD_DIALOG
+});
+
+export const del = (payload) => ({
+  type: inputActionTypes.DELETE,
+  payload: payload
 });
