@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
+import counterReducer from './counterReducer';
 import inputReducer from './inputReducer';
 import selectReducer from './selectReducer';
 import textareaReducer from './textareaReducer';
 
 const rootReducer = combineReducers({
+  count: counterReducer,
   input: inputReducer,
   select: selectReducer,
   textarea: textareaReducer,

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { increaseCount } from "../actions/counterActions";
 import { add as addInput, cancel as cancelInput } from "../actions/inputActions";
 import htmlTagTypes from '../constants/htmlTagTypes';
 import Button from '@material-ui/core/Button';
@@ -29,6 +30,7 @@ export default function InputDialog() {
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(addInput(state));
+    dispatch(increaseCount());
   }
 
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from "react-redux";
+import { decreaseCount } from "../actions/counterActions";
 import { del as deleteInput } from "../actions/inputActions";
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -57,7 +58,10 @@ export default function Elements() {
                 <IconButton
                   aria-label="delete"
                   className={classes.margin}
-                  onClick={() => dispatch(deleteInput(i))}
+                  onClick={() => {
+                    dispatch(deleteInput(i));
+                    dispatch(decreaseCount());
+                  }}
                 >
                   <DeleteIcon />
                 </IconButton>
