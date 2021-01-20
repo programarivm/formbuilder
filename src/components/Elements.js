@@ -52,7 +52,11 @@ export default function Elements() {
     ...state.select.items,
     ...state.textarea.items
   ]
-  .sort((a, b) => (a.order - b.order));
+  .sort((a, b) => (a.order - b.order))
+  .map((elem, i) => {
+    elem.order = i;
+    return elem;
+  });
 
   return (
     <React.Fragment>
@@ -66,20 +70,20 @@ export default function Elements() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {elems.map((row, i) => (
+          {elems.map((elem, i) => (
             <TableRow key={i}>
               <TableCell>
-                <code>&lt;{row.type.toLowerCase()}&gt;</code>
+                <code>&lt;{elem.type.toLowerCase()}&gt;</code>
               </TableCell>
               <TableCell>
-                {row.name}
+                {elem.name}
               </TableCell>
               <TableCell>
                 <IconButton
                   aria-label="delete"
                   className={classes.margin}
                   onClick={() => {
-                    del(dispatch, row);
+                    del(dispatch, elem);
                     dispatch(decreaseCount());
                   }}
                 >
