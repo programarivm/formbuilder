@@ -12,3 +12,8 @@ export const cancel = () => ({
 export const click = () => ({
   type: textareaActionTypes.OPEN_ADD_DIALOG
 });
+
+export const del = (payload) => ({
+  type: textareaActionTypes.DELETE,
+  payload: payload
+});

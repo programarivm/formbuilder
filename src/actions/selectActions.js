@@ -12,3 +12,8 @@ export const cancel = () => ({
 export const click = () => ({
   type: selectActionTypes.OPEN_ADD_DIALOG
 });
+
+export const del = (payload) => ({
+  type: selectActionTypes.DELETE,
+  payload: payload
+});

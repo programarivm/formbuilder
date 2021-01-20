@@ -18,6 +18,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         open: false,
       };
+    case selectActionTypes.DELETE:
+      return {
+        ...state,
+        items: state.items.filter(item => item.order !== action.payload)
+      };
     case selectActionTypes.OPEN_ADD_DIALOG:
       return {
         ...state,

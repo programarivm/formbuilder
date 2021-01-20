@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
     case inputActionTypes.DELETE:
       return {
         ...state,
-        items: state.items.slice(0, action.payload).concat(state.items.slice(action.payload + 1))
+        items: state.items.filter(item => item.order !== action.payload)
       };
     case inputActionTypes.OPEN_ADD_DIALOG:
       return {

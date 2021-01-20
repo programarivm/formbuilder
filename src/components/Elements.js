@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from "react-redux";
 import { decreaseCount } from "../actions/counterActions";
 import { del as deleteInput } from "../actions/inputActions";
+import { del as deleteTextarea } from "../actions/textareaActions";
+import { del as deleteSelect } from "../actions/selectActions";
+import htmlTagTypes from '../constants/htmlTagTypes';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Table from '@material-ui/core/Table';
@@ -20,6 +23,22 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
   },
 }));
+
+const del = (dispatch, elem) => {
+  switch (elem.type) {
+    case htmlTagTypes.INPUT:
+      dispatch(deleteInput(elem.order));
+      break;
+    case htmlTagTypes.TEXTAREA:
+      dispatch(deleteTextarea(elem.order));
+      break;
+    case htmlTagTypes.SELECT:
+      dispatch(deleteSelect(elem.order));
+      break;
+    default:
+      break;
+  }
+}
 
 export default function Elements() {
   const classes = useStyles();
@@ -60,7 +79,7 @@ export default function Elements() {
                   aria-label="delete"
                   className={classes.margin}
                   onClick={() => {
-                    dispatch(deleteInput(i));
+                    del(dispatch, row);
                     dispatch(decreaseCount());
                   }}
                 >
