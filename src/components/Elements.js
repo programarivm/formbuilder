@@ -64,19 +64,23 @@ export default function Elements() {
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Label</TableCell>
             <TableCell>Tag</TableCell>
-            <TableCell>Actions</TableCell>
+            <TableCell>Label</TableCell>
+            <TableCell>Placeholder</TableCell>
+            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {elems.map((elem, i) => (
             <TableRow key={i}>
               <TableCell>
+                <code>&lt;{elem.type.toLowerCase()}&gt;</code>
+              </TableCell>
+              <TableCell>
                 {elem.label}
               </TableCell>
               <TableCell>
-                <code>&lt;{elem.type.toLowerCase()}&gt;</code>
+                {elem.placeholder}
               </TableCell>
               <TableCell>
                 <IconButton

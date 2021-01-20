@@ -12,8 +12,9 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function InputDialog() {
   const [state, setState] = useState({
-    label: '',
+    label: null,
     order: null,
+    placeholder: null,
     type: htmlTagTypes.INPUT
   });
 
@@ -47,6 +48,14 @@ export default function InputDialog() {
             margin="dense"
             name="label"
             label="Label"
+            type="text"
+            fullWidth
+            onChange={handleInputChange}
+          />
+          <TextField
+            margin="dense"
+            name="placeholder"
+            label="Placeholder"
             type="text"
             fullWidth
             onChange={handleInputChange}
