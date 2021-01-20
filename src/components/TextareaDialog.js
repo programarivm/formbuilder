@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { increaseCount } from "../actions/counterActions";
 import { add as addTextarea, cancel as cancelTextarea } from "../actions/textareaActions";
 import htmlTagTypes from '../constants/htmlTagTypes';
 import Button from '@material-ui/core/Button';
@@ -12,8 +13,11 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function TextareaDialog() {
   const [state, setState] = useState({
     name: '',
+    order: null,
     type: htmlTagTypes.TEXTAREA
   });
+
+  const count = useSelector(state => state.counter.count);
 
   const open = useSelector(state => state.textarea.open);
 
@@ -22,6 +26,7 @@ export default function TextareaDialog() {
   const handleTextareaChange = (event) => {
     setState({
       ...state,
+      order: count,
       [event.target.name] : event.target.value
     });
   }
@@ -29,6 +34,7 @@ export default function TextareaDialog() {
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(addTextarea(state));
+    dispatch(increaseCount());
   }
 
   return (

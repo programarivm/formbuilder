@@ -32,7 +32,8 @@ export default function Elements() {
     ...state.input.items,
     ...state.select.items,
     ...state.textarea.items
-  ];
+  ]
+  .sort((a, b) => (a.order - b.order));
 
   return (
     <React.Fragment>

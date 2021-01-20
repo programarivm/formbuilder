@@ -13,8 +13,11 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function InputDialog() {
   const [state, setState] = useState({
     name: '',
+    order: null,
     type: htmlTagTypes.INPUT
   });
+
+  const count = useSelector(state => state.counter.count);
 
   const open = useSelector(state => state.input.open);
 
@@ -23,6 +26,7 @@ export default function InputDialog() {
   const handleInputChange = (event) => {
     setState({
       ...state,
+      order: count,
       [event.target.name] : event.target.value
     });
   }

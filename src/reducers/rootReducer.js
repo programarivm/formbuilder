@@ -5,7 +5,7 @@ import selectReducer from './selectReducer';
 import textareaReducer from './textareaReducer';
 
 const rootReducer = combineReducers({
-  count: counterReducer,
+  counter: counterReducer,
   input: inputReducer,
   select: selectReducer,
   textarea: textareaReducer,

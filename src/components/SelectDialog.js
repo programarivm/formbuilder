@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { increaseCount } from "../actions/counterActions";
 import { add as addSelect, cancel as cancelSelect } from "../actions/selectActions";
 import htmlTagTypes from '../constants/htmlTagTypes';
 import Button from '@material-ui/core/Button';
@@ -12,8 +13,11 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function SelectDialog() {
   const [state, setState] = useState({
     name: '',
+    order: null,
     type: htmlTagTypes.SELECT
   });
+
+  const count = useSelector(state => state.counter.count);
 
   const open = useSelector(state => state.select.open);
 
@@ -22,6 +26,7 @@ export default function SelectDialog() {
   const handleSelectChange = (event) => {
     setState({
       ...state,
+      order: count,
       [event.target.name] : event.target.value
     });
   }
@@ -29,6 +34,7 @@ export default function SelectDialog() {
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(addSelect(state));
+    dispatch(increaseCount());
   }
 
   return (
