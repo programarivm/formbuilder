@@ -13,7 +13,6 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Title from './Title';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -60,7 +59,6 @@ export default function Elements() {
 
   return (
     <React.Fragment>
-      <Title>Form Elements</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
