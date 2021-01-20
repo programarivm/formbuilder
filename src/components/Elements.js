@@ -64,8 +64,8 @@ export default function Elements() {
       <Table size="small">
         <TableHead>
           <TableRow>
+            <TableCell>Label</TableCell>
             <TableCell>Tag</TableCell>
-            <TableCell>Name</TableCell>
             <TableCell>Actions</TableCell>
           </TableRow>
         </TableHead>
@@ -73,10 +73,10 @@ export default function Elements() {
           {elems.map((elem, i) => (
             <TableRow key={i}>
               <TableCell>
-                <code>&lt;{elem.type.toLowerCase()}&gt;</code>
+                {elem.label}
               </TableCell>
               <TableCell>
-                {elem.name}
+                <code>&lt;{elem.type.toLowerCase()}&gt;</code>
               </TableCell>
               <TableCell>
                 <IconButton

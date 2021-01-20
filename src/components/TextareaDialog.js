@@ -12,7 +12,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function TextareaDialog() {
   const [state, setState] = useState({
-    name: '',
+    label: '',
     order: null,
     type: htmlTagTypes.TEXTAREA
   });
@@ -45,9 +45,8 @@ export default function TextareaDialog() {
           <TextField
             autoFocus
             margin="dense"
-            id="name"
-            name="name"
-            label="Name"
+            name="label"
+            label="Label"
             type="text"
             fullWidth
             onChange={handleTextareaChange}

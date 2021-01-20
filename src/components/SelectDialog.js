@@ -12,7 +12,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function SelectDialog() {
   const [state, setState] = useState({
-    name: '',
+    label: '',
     order: null,
     type: htmlTagTypes.SELECT
   });
@@ -45,9 +45,8 @@ export default function SelectDialog() {
           <TextField
             autoFocus
             margin="dense"
-            id="name"
-            name="name"
-            label="Name"
+            name="label"
+            label="Label"
             type="text"
             fullWidth
             onChange={handleSelectChange}
