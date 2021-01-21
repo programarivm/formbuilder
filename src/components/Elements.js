@@ -5,7 +5,7 @@ import { decreaseCount } from "../actions/counterActions";
 import { del as deleteInput } from "../actions/inputActions";
 import { del as deleteTextarea } from "../actions/textareaActions";
 import { del as deleteSelect } from "../actions/selectActions";
-import htmlTagTypes from '../constants/htmlTagTypes';
+import htmlTagTypes from '../constants/htmlTag/Types';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Table from '@material-ui/core/Table';

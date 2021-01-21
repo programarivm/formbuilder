@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { increaseCount } from "../actions/counterActions";
 import { add as addTextarea, cancel as cancelTextarea } from "../actions/textareaActions";
-import htmlTagTypes from '../constants/htmlTagTypes';
+import htmlTagTypes from '../constants/htmlTag/Types';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { increaseCount } from "../actions/counterActions";
 import { add as addInput, cancel as cancelInput } from "../actions/inputActions";
-import htmlTagTypes from '../constants/htmlTagTypes';
-import htmlInputTagTypes from '../constants/htmlInputTagTypes';
+import htmlTagTypes from '../constants/htmlTag/Types';
+import htmlTagInputTypes from '../constants/htmlTag/input/Types';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -54,7 +54,7 @@ export default function InputDialog() {
             fullWidth
             onChange={handleInputChange}
           >
-            {Object.keys(htmlInputTagTypes).map((key, i) => (
+            {Object.keys(htmlTagInputTypes).map((key, i) => (
               <MenuItem key={i} value={key}>{key.charAt(0) + key.substring(1).toLowerCase()}</MenuItem>
             ))}
           </Select>

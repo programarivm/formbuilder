@@ -1,4 +1,4 @@
-const htmlInputTagTypes = {
+const htmlTagInputTypes = {
   DATE: 'DATE_TYPE',
   EMAIL: 'EMAIL_TYPE',
   NUMBER: 'NUMBER_TYPE',
@@ -8,4 +8,4 @@ const htmlInputTagTypes = {
   URL: 'URL_TYPE'
 };
 
-export default htmlInputTagTypes;
+export default htmlTagInputTypes;
