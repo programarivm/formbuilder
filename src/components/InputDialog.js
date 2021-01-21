@@ -3,19 +3,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { increaseCount } from "../actions/counterActions";
 import { add as addInput, cancel as cancelInput } from "../actions/inputActions";
 import htmlTagTypes from '../constants/htmlTagTypes';
+import htmlInputTagTypes from '../constants/htmlInputTagTypes';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 
 export default function InputDialog() {
   const [state, setState] = useState({
     label: null,
     order: null,
     placeholder: null,
-    type: htmlTagTypes.INPUT
+    type: htmlTagTypes.INPUT,
+    subtype: null
   });
 
   const count = useSelector(state => state.counter.count);
@@ -43,6 +48,16 @@ export default function InputDialog() {
       <Dialog open={open} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Input</DialogTitle>
         <DialogContent>
+          <InputLabel>Type</InputLabel>
+          <Select
+            name="subtype"
+            fullWidth
+            onChange={handleInputChange}
+          >
+            {Object.keys(htmlInputTagTypes).map((key, i) => (
+              <MenuItem key={i} value={key}>{key.charAt(0) + key.substring(1).toLowerCase()}</MenuItem>
+            ))}
+          </Select>
           <TextField
             autoFocus
             margin="dense"
