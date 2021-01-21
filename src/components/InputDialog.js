@@ -54,8 +54,13 @@ export default function InputDialog() {
             fullWidth
             onChange={handleInputChange}
           >
+            <MenuItem value="" disabled>
+              Select a type
+            </MenuItem>
             {Object.keys(htmlTagInputTypes).map((key, i) => (
-              <MenuItem key={i} value={key}>{key.charAt(0) + key.substring(1).toLowerCase()}</MenuItem>
+              <MenuItem key={i} value={key}>
+                {key.charAt(0) + key.substring(1).toLowerCase()}
+              </MenuItem>
             ))}
           </Select>
           <TextField
