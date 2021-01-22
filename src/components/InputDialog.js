@@ -4,15 +4,8 @@ import { increaseCount } from "../actions/counterActions";
 import { add as addInput, cancel as cancelInput } from "../actions/inputActions";
 import htmlTagTypes from '../constants/htmlTag/Types';
 import htmlTagInputTypes from '../constants/htmlTag/input/Types';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, InputLabel, MenuItem,
+  TextField, Select } from '@material-ui/core';
 
 export default function InputDialog() {
   const [state, setState] = useState({
@@ -20,7 +13,7 @@ export default function InputDialog() {
     order: null,
     placeholder: null,
     type: htmlTagTypes.INPUT,
-    subtype: null
+    subtype: htmlTagInputTypes.TEXT
   });
 
   const count = useSelector(state => state.counter.count);
@@ -48,47 +41,52 @@ export default function InputDialog() {
       <Dialog open={open} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Input</DialogTitle>
         <DialogContent>
-          <InputLabel>Type</InputLabel>
-          <Select
-            name="subtype"
-            fullWidth
-            onChange={handleInputChange}
-          >
-            <MenuItem value="" disabled>
-              Select a type
-            </MenuItem>
-            {Object.keys(htmlTagInputTypes).map((key, i) => (
-              <MenuItem key={i} value={key}>
-                {key.charAt(0) + key.substring(1).toLowerCase()}
+          <form onSubmit={handleSubmit}>
+            <InputLabel>Type</InputLabel>
+            <Select
+              value={state.subtype}
+              name="subtype"
+              fullWidth
+              required
+              onChange={handleInputChange}
+            >
+              <MenuItem value="" disabled>
+                Select a type
               </MenuItem>
-            ))}
-          </Select>
-          <TextField
-            autoFocus
-            margin="dense"
-            name="label"
-            label="Label"
-            type="text"
-            fullWidth
-            onChange={handleInputChange}
-          />
-          <TextField
-            margin="dense"
-            name="placeholder"
-            label="Placeholder"
-            type="text"
-            fullWidth
-            onChange={handleInputChange}
-          />
+              {Object.keys(htmlTagInputTypes).map((key, i) => (
+                <MenuItem key={i} value={htmlTagInputTypes[key]}>
+                  {key.charAt(0) + key.substring(1).toLowerCase()}
+                </MenuItem>
+              ))}
+            </Select>
+            <TextField
+              autoFocus
+              margin="dense"
+              name="label"
+              label="Label"
+              type="text"
+              fullWidth
+              required
+              onChange={handleInputChange}
+            />
+            <TextField
+              margin="dense"
+              name="placeholder"
+              label="Placeholder"
+              type="text"
+              fullWidth
+              onChange={handleInputChange}
+            />
+            <DialogActions>
+              <Button color="primary" type="submit">
+                Add
+              </Button>
+              <Button onClick={() => dispatch(cancelInput())} color="primary">
+                Cancel
+              </Button>
+            </DialogActions>
+          </form>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleSubmit} color="primary">
-            Add
-          </Button>
-          <Button onClick={() => dispatch(cancelInput())} color="primary">
-            Cancel
-          </Button>
-        </DialogActions>
       </Dialog>
     </div>
   );
