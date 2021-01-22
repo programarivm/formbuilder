@@ -4,6 +4,7 @@ import { increaseCount } from "../actions/counterActions";
 import { add as addSelect, cancel as cancelSelect } from "../actions/selectActions";
 import htmlTagTypes from '../constants/htmlTag/Types';
 import Button from '@material-ui/core/Button';
+import ChipInput from 'material-ui-chip-input';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -15,6 +16,7 @@ export default function SelectDialog() {
     label: null,
     order: null,
     placeholder: null,
+    options: [],
     type: htmlTagTypes.SELECT
   });
 
@@ -29,6 +31,22 @@ export default function SelectDialog() {
       ...state,
       order: count,
       [event.target.name] : event.target.value
+    });
+  }
+
+  const handleAddChip = (chip) => {
+    setState({
+      ...state,
+      order: count,
+      options: [...state.options, chip]
+    });
+  }
+
+  const handleDeleteChip = (chip) => {
+    setState({
+      ...state,
+      order: count,
+      options: state.options.filter(item => item !== chip)
     });
   }
 
@@ -59,6 +77,13 @@ export default function SelectDialog() {
             type="text"
             fullWidth
             onChange={handleSelectChange}
+          />
+          <ChipInput
+            label="Options"
+            fullWidth
+            value={state.options}
+            onAdd={(chip) => handleAddChip(chip)}
+            onDelete={(chip, i) => handleDeleteChip(chip, i)}
           />
         </DialogContent>
         <DialogActions>
