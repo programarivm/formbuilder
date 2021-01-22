@@ -3,22 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { increaseCount } from "../actions/counterActions";
 import { add as addSelect, cancel as cancelSelect } from "../actions/selectActions";
 import htmlTagTypes from '../constants/htmlTag/Types';
-import Button from '@material-ui/core/Button';
 import ChipInput from 'material-ui-chip-input';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@material-ui/core';
 
 export default function SelectDialog() {
-  const [state, setState] = useState({
+  const initialState = {
     label: null,
     order: null,
     placeholder: null,
     options: [],
     type: htmlTagTypes.SELECT
-  });
+  };
+
+  const [state, setState] = useState(initialState);
 
   const count = useSelector(state => state.counter.count);
 
@@ -51,9 +48,16 @@ export default function SelectDialog() {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     dispatch(addSelect(state));
     dispatch(increaseCount());
+    setState(initialState);
+  }
+
+  const handleCancel = (event) => {
+    event.preventDefault();
+    dispatch(cancelSelect());
+    setState(initialState);
   }
 
   return (
@@ -61,39 +65,43 @@ export default function SelectDialog() {
       <Dialog open={open} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Select</DialogTitle>
         <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            name="label"
-            label="Label"
-            type="text"
-            fullWidth
-            onChange={handleSelectChange}
-          />
-          <TextField
-            margin="dense"
-            name="placeholder"
-            label="Placeholder"
-            type="text"
-            fullWidth
-            onChange={handleSelectChange}
-          />
-          <ChipInput
-            label="Options"
-            fullWidth
-            value={state.options}
-            onAdd={(chip) => handleAddChip(chip)}
-            onDelete={(chip, i) => handleDeleteChip(chip, i)}
-          />
+          <form onSubmit={handleSubmit}>
+            <TextField
+              autoFocus
+              margin="dense"
+              name="label"
+              label="Label"
+              type="text"
+              fullWidth
+              required
+              onChange={handleSelectChange}
+            />
+            <TextField
+              margin="dense"
+              name="placeholder"
+              label="Placeholder"
+              type="text"
+              fullWidth
+              onChange={handleSelectChange}
+            />
+            <ChipInput
+              label="Options"
+              fullWidth
+              required={state.options.length > 0 ? false : true}
+              value={state.options}
+              onAdd={(chip) => handleAddChip(chip)}
+              onDelete={(chip, i) => handleDeleteChip(chip, i)}
+            />
+            <DialogActions>
+              <Button color="primary" type="submit">
+                Add
+              </Button>
+              <Button onClick={handleCancel} color="primary">
+                Cancel
+              </Button>
+            </DialogActions>
+          </form>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleSubmit} color="primary">
-            Add
-          </Button>
-          <Button onClick={() => dispatch(cancelSelect())} color="primary">
-            Cancel
-          </Button>
-        </DialogActions>
       </Dialog>
     </div>
   );
