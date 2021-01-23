@@ -6,13 +6,9 @@ import { del as deleteInput } from "../actions/inputActions";
 import { del as deleteTextarea } from "../actions/textareaActions";
 import { del as deleteSelect } from "../actions/selectActions";
 import htmlTagTypes from '../constants/htmlTag/Types';
-import IconButton from '@material-ui/core/IconButton';
+import { IconButton, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -41,8 +37,14 @@ export default function Elements() {
     return elem;
   });
 
+  const handleEdit = (event, elem) => {
+    event.preventDefault();
+    // TODO ...
+    console.log('TODO ...');
+  }
+
   const handleDelete = (event, elem) => {
-    event.preventDefault()
+    event.preventDefault();
     switch (elem.type) {
       case htmlTagTypes.INPUT:
         dispatch(deleteInput(elem.order));
@@ -56,7 +58,7 @@ export default function Elements() {
       default:
         break;
     }
-    
+
     dispatch(decreaseCount());
   }
 
@@ -84,6 +86,13 @@ export default function Elements() {
                 {elem.placeholder}
               </TableCell>
               <TableCell>
+                <IconButton
+                  aria-label="edit"
+                  className={classes.margin}
+                  onClick={(e) => handleEdit(e, elem)}
+                >
+                  <EditIcon />
+                </IconButton>
                 <IconButton
                   aria-label="delete"
                   className={classes.margin}
