@@ -23,22 +23,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const del = (dispatch, elem) => {
-  switch (elem.type) {
-    case htmlTagTypes.INPUT:
-      dispatch(deleteInput(elem.order));
-      break;
-    case htmlTagTypes.TEXTAREA:
-      dispatch(deleteTextarea(elem.order));
-      break;
-    case htmlTagTypes.SELECT:
-      dispatch(deleteSelect(elem.order));
-      break;
-    default:
-      break;
-  }
-}
-
 export default function Elements() {
   const classes = useStyles();
 
@@ -56,6 +40,25 @@ export default function Elements() {
     elem.order = i;
     return elem;
   });
+
+  const handleDelete = (event, elem) => {
+    event.preventDefault()
+    switch (elem.type) {
+      case htmlTagTypes.INPUT:
+        dispatch(deleteInput(elem.order));
+        break;
+      case htmlTagTypes.TEXTAREA:
+        dispatch(deleteTextarea(elem.order));
+        break;
+      case htmlTagTypes.SELECT:
+        dispatch(deleteSelect(elem.order));
+        break;
+      default:
+        break;
+    }
+    
+    dispatch(decreaseCount());
+  }
 
   return (
     <React.Fragment>
@@ -84,10 +87,7 @@ export default function Elements() {
                 <IconButton
                   aria-label="delete"
                   className={classes.margin}
-                  onClick={() => {
-                    del(dispatch, elem);
-                    dispatch(decreaseCount());
-                  }}
+                  onClick={(e) => handleDelete(e, elem)}
                 >
                   <DeleteIcon />
                 </IconButton>
