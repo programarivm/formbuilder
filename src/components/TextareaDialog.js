@@ -43,32 +43,35 @@ export default function TextareaDialog() {
       <Dialog open={open} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Textarea</DialogTitle>
         <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            name="label"
-            label="Label"
-            type="text"
-            fullWidth
-            onChange={handleTextareaChange}
-          />
-          <TextField
-            margin="dense"
-            name="placeholder"
-            label="Placeholder"
-            type="text"
-            fullWidth
-            onChange={handleTextareaChange}
-          />
+          <form onSubmit={handleSubmit}>
+            <TextField
+              autoFocus
+              margin="dense"
+              name="label"
+              label="Label"
+              type="text"
+              fullWidth
+              required
+              onChange={handleTextareaChange}
+            />
+            <TextField
+              margin="dense"
+              name="placeholder"
+              label="Placeholder"
+              type="text"
+              fullWidth
+              onChange={handleTextareaChange}
+            />
+            <DialogActions>
+              <Button color="primary" type="submit">
+                Add
+              </Button>
+              <Button onClick={() => dispatch(cancelTextarea())} color="primary">
+                Cancel
+              </Button>
+            </DialogActions>
+          </form>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleSubmit} color="primary">
-            Add
-          </Button>
-          <Button onClick={() => dispatch(cancelTextarea())} color="primary">
-            Cancel
-          </Button>
-        </DialogActions>
       </Dialog>
     </div>
   );
