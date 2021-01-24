@@ -22,6 +22,10 @@ import InputDialog from './InputDialog';
 import SelectDialog from './SelectDialog';
 import TextareaDialog from './TextareaDialog';
 
+import Example from './Example'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -176,6 +180,9 @@ export default function Dashboard() {
             <Copyright />
           </Box>
         </Container>
+        <DndProvider backend={HTML5Backend}>
+					<Example />
+				</DndProvider>
       </main>
       <InputDialog />
       <SelectDialog />
