@@ -4,11 +4,8 @@ import ItemTypes from "./ItemTypes";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-// import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import CardActions from "@material-ui/core/CardActions";
 
 const style = {
   border: "1px dashed gray",
@@ -85,13 +82,5 @@ const CustomCard = React.forwardRef((props, ref) => (
         </Typography>
       </CardContent>
     </CardActionArea>
-    <CardActions>
-      <Button size="small" color="primary">
-        Share
-      </Button>
-      <Button size="small" color="primary">
-        Learn More
-      </Button>
-    </CardActions>
   </Card>
 ));
