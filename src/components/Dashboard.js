@@ -22,7 +22,6 @@ import InputDialog from './InputDialog';
 import SelectDialog from './SelectDialog';
 import TextareaDialog from './TextareaDialog';
 
-import Example from './Example'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
@@ -172,7 +171,9 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Elements />
+                <DndProvider backend={HTML5Backend}>
+                  <Elements />
+                </DndProvider>
               </Paper>
             </Grid>
           </Grid>
@@ -180,9 +181,6 @@ export default function Dashboard() {
             <Copyright />
           </Box>
         </Container>
-        <DndProvider backend={HTML5Backend}>
-					<Example />
-				</DndProvider>
       </main>
       <InputDialog />
       <SelectDialog />

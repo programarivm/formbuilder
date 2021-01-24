@@ -18,3 +18,8 @@ export const del = (payload) => ({
   type: inputActionTypes.DELETE,
   payload: payload
 });
+
+export const reorder = (payload) => ({
+  type: inputActionTypes.REORDER,
+  payload: payload
+});

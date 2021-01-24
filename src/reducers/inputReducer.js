@@ -28,6 +28,21 @@ const reducer = (state = initialState, action) => {
         ...state,
         open: true,
       };
+    case inputActionTypes.REORDER:
+      const reordered = state.items.map((item) => {
+        if (item.order === action.payload.to) {
+          item.order = action.payload.from;
+          return item;
+        } else if (item.order === action.payload.from) {
+          item.order = action.payload.to;
+          return item;
+        }
+        return item;
+      });
+      return {
+        ...state,
+        items: reordered,
+      };
     default:
       return state;
   }
