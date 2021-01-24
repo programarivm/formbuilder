@@ -6,9 +6,11 @@ import { del as deleteInput } from "../actions/inputActions";
 import { del as deleteTextarea } from "../actions/textareaActions";
 import { del as deleteSelect } from "../actions/selectActions";
 import htmlTagTypes from '../constants/htmlTag/Types';
-import { IconButton, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
+import { Card, CardActions, CardContent, IconButton } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
+
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -64,47 +66,37 @@ export default function Elements() {
 
   return (
     <React.Fragment>
-      <Table size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell>Tag</TableCell>
-            <TableCell>Label</TableCell>
-            <TableCell>Placeholder</TableCell>
-            <TableCell></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {elems.map((elem, i) => (
-            <TableRow key={i}>
-              <TableCell>
-                <code>&lt;{elem.type.toLowerCase()}&gt;</code>
-              </TableCell>
-              <TableCell>
-                {elem.label}
-              </TableCell>
-              <TableCell>
-                {elem.placeholder}
-              </TableCell>
-              <TableCell>
-                <IconButton
-                  aria-label="edit"
-                  className={classes.margin}
-                  onClick={(e) => handleEdit(e, elem)}
-                >
-                  <EditIcon />
-                </IconButton>
-                <IconButton
-                  aria-label="delete"
-                  className={classes.margin}
-                  onClick={(e) => handleDelete(e, elem)}
-                >
-                  <DeleteIcon />
-                </IconButton>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      {elems.map((elem, i) => (
+        <Card key={i}>
+          <CardContent>
+            <Typography variant="h5" component="h2">
+              {elem.label}
+            </Typography>
+            <Typography color="textSecondary">
+              <code>&lt;{elem.type.toLowerCase()}&gt;</code>
+            </Typography>
+            <Typography color="textSecondary">
+              {elem.placeholder}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <IconButton
+              aria-label="edit"
+              className={classes.margin}
+              onClick={(e) => handleEdit(e, elem)}
+            >
+              <EditIcon />
+            </IconButton>
+            <IconButton
+              aria-label="delete"
+              className={classes.margin}
+              onClick={(e) => handleDelete(e, elem)}
+            >
+              <DeleteIcon />
+            </IconButton>
+          </CardActions>
+        </Card>
+      ))}
     </React.Fragment>
   );
 }
