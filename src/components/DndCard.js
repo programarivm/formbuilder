@@ -4,13 +4,10 @@ import { useDrag, useDrop } from "react-dnd";
 import dndTypes from '../constants/dnd/Types';
 import { decreaseCount } from "../actions/counterActions";
 import { del as deleteInput } from "../actions/inputActions";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import Typography from "@material-ui/core/Typography";
 import { del as deleteTextarea } from "../actions/textareaActions";
 import { del as deleteSelect } from "../actions/selectActions";
 import htmlTagTypes from '../constants/htmlTag/Types';
-import { CardActions, CardContent, IconButton } from '@material-ui/core';
+import { Card, CardActionArea, CardActions, CardContent, IconButton, Typography  } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 
@@ -22,7 +19,7 @@ const style = {
   cursor: "move"
 };
 
-const DndCard = ({ label, type, placeholder, index, elem, moveCard }) => {
+const DndCard = ({ index, elem, moveCard }) => {
   const dispatch = useDispatch();
 
   const ref = useRef(null);
@@ -109,13 +106,13 @@ const DndCard = ({ label, type, placeholder, index, elem, moveCard }) => {
       <CardActionArea>
         <CardContent>
           <Typography variant="h5" component="h2">
-            {label}
+            {elem.label}
           </Typography>
           <Typography color="textSecondary">
-            <code>&lt;{type.toLowerCase()}&gt;</code>
+            <code>&lt;{elem.type.toLowerCase()}&gt;</code>
           </Typography>
           <Typography color="textSecondary">
-            {placeholder}
+            {elem.placeholder}
           </Typography>
         </CardContent>
         <CardActions>

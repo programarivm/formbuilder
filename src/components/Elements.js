@@ -32,10 +32,6 @@ export default function Elements() {
     return (
       <DndCard
         key={i}
-        id={elem.order}
-        label={elem.label}
-        type={elem.type}
-        placeholder={elem.placeholder}
         index={elem.order}
         elem={elem}
         moveCard={moveCard}
