@@ -28,6 +28,19 @@ const reducer = (state = initialState, action) => {
         ...state,
         open: true,
       };
+    case textareaActionTypes.REORDER:
+      const reordered = state.items.map((item) => {
+        if (item.order === action.payload.to) {
+          item.order = action.payload.from;
+        } else if (item.order === action.payload.from) {
+          item.order = action.payload.to;
+        }
+        return item;
+      });
+      return {
+        ...state,
+        items: reordered,
+      };
     default:
       return state;
   }

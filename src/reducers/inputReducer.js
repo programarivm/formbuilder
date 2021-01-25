@@ -32,10 +32,8 @@ const reducer = (state = initialState, action) => {
       const reordered = state.items.map((item) => {
         if (item.order === action.payload.to) {
           item.order = action.payload.from;
-          return item;
         } else if (item.order === action.payload.from) {
           item.order = action.payload.to;
-          return item;
         }
         return item;
       });

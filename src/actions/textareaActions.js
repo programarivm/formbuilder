@@ -17,3 +17,8 @@ export const del = (payload) => ({
   type: textareaActionTypes.DELETE,
   payload: payload
 });
+
+export const reorder = (payload) => ({
+  type: textareaActionTypes.REORDER,
+  payload: payload
+});

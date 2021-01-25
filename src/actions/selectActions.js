@@ -17,3 +17,8 @@ export const del = (payload) => ({
   type: selectActionTypes.DELETE,
   payload: payload
 });
+
+export const reorder = (payload) => ({
+  type: selectActionTypes.REORDER,
+  payload: payload
+});

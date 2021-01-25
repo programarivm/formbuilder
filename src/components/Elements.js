@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { reorder as reorderInput } from "../actions/inputActions";
+import { reorder as reorderSelect } from "../actions/selectActions";
+import { reorder as reorderTextarea } from "../actions/textareaActions";
+import htmlTagTypes from '../constants/htmlTag/Types';
 import DndCard from './DndCard';
 
 export default function Elements() {
@@ -20,13 +23,35 @@ export default function Elements() {
   });
 
   const moveCard = (dragIndex, hoverIndex) => {
-    dispatch(
-      reorderInput({
-        'from': elems[dragIndex].order,
-        'to': elems[hoverIndex].order
-      })
-    );
-  };
+    switch (elems[dragIndex].type) {
+      case htmlTagTypes.INPUT:
+        dispatch(
+          reorderInput({
+            'from': elems[dragIndex].order,
+            'to': elems[hoverIndex].order
+          })
+        );
+        break;
+      case htmlTagTypes.SELECT:
+        dispatch(
+          reorderSelect({
+            'from': elems[dragIndex].order,
+            'to': elems[hoverIndex].order
+          })
+        );
+        break;
+      case htmlTagTypes.TEXTAREA:
+        dispatch(
+          reorderTextarea({
+            'from': elems[dragIndex].order,
+            'to': elems[hoverIndex].order
+          })
+        );
+        break;
+      default:
+        break;
+    }
+  }
 
   const renderCard = (elem, i) => {
     return (
