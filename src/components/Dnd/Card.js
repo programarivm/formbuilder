@@ -1,13 +1,16 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useDrag, useDrop } from "react-dnd";
-import dndTypes from '../constants/dnd/Types';
-import { decreaseCount } from "../actions/counterActions";
-import { del as deleteInput } from "../actions/inputActions";
-import { del as deleteTextarea } from "../actions/textareaActions";
-import { del as deleteSelect } from "../actions/selectActions";
-import htmlTagTypes from '../constants/htmlTag/Types';
-import { Button, Card, CardActionArea, CardActions, CardContent, Typography  } from '@material-ui/core';
+import dndTypes from '../../constants/dnd/Types';
+import { decreaseCount } from "../../actions/counterActions";
+import { del as deleteInput } from "../../actions/inputActions";
+import { del as deleteTextarea } from "../../actions/textareaActions";
+import { del as deleteSelect } from "../../actions/selectActions";
+import htmlTagTypes from '../../constants/htmlTag/Types';
+import { Button, Card, CardActionArea, CardActions } from '@material-ui/core';
+import InputCardContent from "./CardContent/Input";
+import SelectCardContent from "./CardContent/Select";
+import TextareaCardContent from "./CardContent/Textarea";
 
 const style = {
   border: "1px dashed gray",
@@ -99,20 +102,23 @@ const DndCard = ({ index, elem, moveCard }) => {
     dispatch(decreaseCount());
   }
 
+  const renderContent = (elem) => {
+    switch (elem.type) {
+      case htmlTagTypes.INPUT:
+        return <InputCardContent elem={elem} />;
+      case htmlTagTypes.SELECT:
+        return <SelectCardContent elem={elem} />;
+      case htmlTagTypes.TEXTAREA:
+        return <TextareaCardContent elem={elem} />;
+      default:
+        break;
+    }
+  }
+
   return (
     <Card ref={ref} style={{ ...style, opacity }}>
       <CardActionArea>
-        <CardContent>
-          <Typography variant="h5" component="h2">
-            {elem.label}
-          </Typography>
-          <Typography color="textSecondary">
-            <code>&lt;{elem.type.toLowerCase()}&gt;</code>
-          </Typography>
-          <Typography color="textSecondary">
-            {elem.placeholder}
-          </Typography>
-        </CardContent>
+        {renderContent(elem)}
         <CardActions>
           <Button
             size="small"
