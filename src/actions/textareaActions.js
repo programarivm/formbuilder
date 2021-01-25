@@ -18,7 +18,7 @@ export const del = (payload) => ({
   payload: payload
 });
 
-export const reorder = (payload) => ({
-  type: textareaActionTypes.REORDER,
+export const set = (payload) => ({
+  type: textareaActionTypes.SET,
   payload: payload
 });

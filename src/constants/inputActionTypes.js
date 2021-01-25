@@ -3,7 +3,7 @@ const inputActionTypes = {
   CLOSE_ADD_DIALOG: 'CLOSE_ADD_DIALOG_INPUT',
   DELETE: 'DELETE_INPUT',
   OPEN_ADD_DIALOG: 'OPEN_ADD_DIALOG_INPUT',
-  REORDER: 'REORDER_INPUT'
+  SET: 'SET_INPUT'
 };
 
 export default inputActionTypes;

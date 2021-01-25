@@ -1,4 +1,3 @@
-
 import inputActionTypes from '../constants/inputActionTypes'
 
 export const add = (payload) => ({
@@ -19,7 +18,7 @@ export const del = (payload) => ({
   payload: payload
 });
 
-export const reorder = (payload) => ({
-  type: inputActionTypes.REORDER,
+export const set = (payload) => ({
+  type: inputActionTypes.SET,
   payload: payload
 });

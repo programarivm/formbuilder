@@ -18,7 +18,7 @@ export const del = (payload) => ({
   payload: payload
 });
 
-export const reorder = (payload) => ({
-  type: selectActionTypes.REORDER,
+export const set = (payload) => ({
+  type: selectActionTypes.SET,
   payload: payload
 });

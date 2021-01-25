@@ -3,7 +3,7 @@ const selectActionTypes = {
   CLOSE_ADD_DIALOG: 'CLOSE_ADD_DIALOG_SELECT',
   DELETE: 'DELETE_SELECT',
   OPEN_ADD_DIALOG: 'OPEN_ADD_DIALOG_SELECT',
-  REORDER: 'REORDER_SELECT'
+  SET: 'SET_SELECT'
 };
 
 export default selectActionTypes;

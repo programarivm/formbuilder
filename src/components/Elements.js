@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { reorder as reorderInput } from "../actions/inputActions";
-import { reorder as reorderSelect } from "../actions/selectActions";
-import { reorder as reorderTextarea } from "../actions/textareaActions";
+import { set as setInput } from "../actions/inputActions";
+import { set as setSelect } from "../actions/selectActions";
+import { set as setTextarea } from "../actions/textareaActions";
 import htmlTagTypes from '../constants/htmlTag/Types';
 import DndCard from './DndCard';
 
@@ -11,7 +11,7 @@ export default function Elements() {
 
   const state = useSelector(state => state);
 
-  const elems = [
+  let elems = [
     ...state.input.items,
     ...state.select.items,
     ...state.textarea.items
@@ -22,35 +22,34 @@ export default function Elements() {
     return elem;
   });
 
+  const reorder = (elems, dragIndex, hoverIndex) => {
+    return elems.map((elem) => {
+      if (elem.order === hoverIndex) {
+        elem.order = dragIndex;
+      } else if (elem.order === dragIndex) {
+        elem.order = hoverIndex;
+      }
+      return elem;
+    }).sort((a, b) => (a.order - b.order));
+  };
+
   const moveCard = (dragIndex, hoverIndex) => {
-    switch (elems[dragIndex].type) {
-      case htmlTagTypes.INPUT:
-        dispatch(
-          reorderInput({
-            'from': elems[dragIndex].order,
-            'to': elems[hoverIndex].order
-          })
-        );
-        break;
-      case htmlTagTypes.SELECT:
-        dispatch(
-          reorderSelect({
-            'from': elems[dragIndex].order,
-            'to': elems[hoverIndex].order
-          })
-        );
-        break;
-      case htmlTagTypes.TEXTAREA:
-        dispatch(
-          reorderTextarea({
-            'from': elems[dragIndex].order,
-            'to': elems[hoverIndex].order
-          })
-        );
-        break;
-      default:
-        break;
-    }
+    reorder(elems, dragIndex, hoverIndex);
+    dispatch(
+      setInput({
+        items: elems.filter(elem => elem.type === htmlTagTypes.INPUT)
+      })
+    );
+    dispatch(
+      setSelect({
+        items: elems.filter(elem => elem.type === htmlTagTypes.SELECT)
+      })
+    );
+    dispatch(
+      setTextarea({
+        items: elems.filter(elem => elem.type === htmlTagTypes.TEXTAREA)
+      })
+    );
   }
 
   const renderCard = (elem, i) => {
