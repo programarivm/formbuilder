@@ -7,9 +7,7 @@ import { del as deleteInput } from "../actions/inputActions";
 import { del as deleteTextarea } from "../actions/textareaActions";
 import { del as deleteSelect } from "../actions/selectActions";
 import htmlTagTypes from '../constants/htmlTag/Types';
-import { Card, CardActionArea, CardActions, CardContent, IconButton, Typography  } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
+import { Button, Card, CardActionArea, CardActions, CardContent, Typography  } from '@material-ui/core';
 
 const style = {
   border: "1px dashed gray",
@@ -116,19 +114,21 @@ const DndCard = ({ index, elem, moveCard }) => {
           </Typography>
         </CardContent>
         <CardActions>
-            <IconButton
-              aria-label="edit"
-              onClick={(e) => handleEdit(e, elem)}
-            >
-              <EditIcon />
-            </IconButton>
-            <IconButton
-              aria-label="delete"
-              onClick={(e) => handleDelete(e, elem)}
-            >
-              <DeleteIcon />
-            </IconButton>
-          </CardActions>
+          <Button
+            size="small"
+            color="primary"
+            onClick={(e) => handleEdit(e, elem)}
+          >
+            Edit
+          </Button>
+          <Button
+            size="small"
+            color="primary"
+            onClick={(e) => handleDelete(e, elem)}
+          >
+            Delete
+          </Button>
+        </CardActions>
       </CardActionArea>
     </Card>
   );
