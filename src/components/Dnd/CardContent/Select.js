@@ -1,17 +1,31 @@
 import React from "react";
-import { CardContent, Typography  } from '@material-ui/core';
+import { CardContent } from '@material-ui/core';
+import HtmlTag from './HtmlTag';
 
 const Select = ({ elem }) => {
   return (
     <CardContent>
-      <Typography variant="h6" component="h3">
-        <code>&lt;label&gt;{elem.label}&lt;/label&gt;</code>
-      </Typography>
-      <Typography variant="h6" component="h3">
-        <code>
-          &lt;select&gt;&lt;options&gt;TODO...&lt;/options&gt;&lt;/select&gt;
-        </code>
-      </Typography>
+      <HtmlTag
+        name="label"
+        text={elem.label}
+      />
+      <HtmlTag
+        name="select"
+      />
+      <HtmlTag
+        name="option"
+        text={elem.placeholder}
+        emptyAttr={ ['disabled', 'selected'] }
+      />
+      <div style={{ marginLeft: 10 }}>
+        {(elem.options).map(option =>
+          <HtmlTag name="option" text={option} />
+        )}
+      </div>
+      <HtmlTag
+        name="select"
+        closing={true}
+      />
     </CardContent>
   );
 };
