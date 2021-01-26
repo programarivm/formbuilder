@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/formbuilder/static/js/main.5cfd38db.chunk.js",
+    "main.js.map": "/formbuilder/static/js/main.5cfd38db.chunk.js.map",
+    "runtime-main.js": "/formbuilder/static/js/runtime-main.befb0c24.js",
+    "runtime-main.js.map": "/formbuilder/static/js/runtime-main.befb0c24.js.map",
+    "static/js/2.af80328c.chunk.js": "/formbuilder/static/js/2.af80328c.chunk.js",
+    "static/js/2.af80328c.chunk.js.map": "/formbuilder/static/js/2.af80328c.chunk.js.map",
+    "index.html": "/formbuilder/index.html",
+    "static/js/2.af80328c.chunk.js.LICENSE.txt": "/formbuilder/static/js/2.af80328c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.befb0c24.js",
+    "static/js/2.af80328c.chunk.js",
+    "static/js/main.5cfd38db.chunk.js"
+  ]
+}
