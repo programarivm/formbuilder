@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-import { click as clickInput } from "../actions/inputActions";
-import { click as clickSelect } from "../actions/selectActions";
-import { click as clickTextarea } from "../actions/textareaActions";
+import { click as clickInput } from "actions/inputActions";
+import { click as clickSelect } from "actions/selectActions";
+import { click as clickTextarea } from "actions/textareaActions";
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';

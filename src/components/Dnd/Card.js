@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useDrag, useDrop } from "react-dnd";
-import dndTypes from '../../constants/dnd/Types';
-import { decreaseCount } from "../../actions/counterActions";
-import { del as deleteInput } from "../../actions/inputActions";
-import { del as deleteTextarea } from "../../actions/textareaActions";
-import { del as deleteSelect } from "../../actions/selectActions";
-import htmlTagTypes from '../../constants/htmlTag/Types';
+import dndTypes from 'constants/dnd/Types';
+import { decreaseCount } from "actions/counterActions";
+import { del as deleteInput } from "actions/inputActions";
+import { del as deleteTextarea } from "actions/textareaActions";
+import { del as deleteSelect } from "actions/selectActions";
+import htmlTagTypes from 'constants/htmlTag/Types';
 import { Button, Card, CardActionArea, CardActions } from '@material-ui/core';
 import InputCardContent from "./CardContent/Input";
 import SelectCardContent from "./CardContent/Select";

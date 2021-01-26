@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { increaseCount } from "../actions/counterActions";
-import { add as addSelect, cancel as cancelSelect } from "../actions/selectActions";
-import htmlTagTypes from '../constants/htmlTag/Types';
+import { increaseCount } from "actions/counterActions";
+import { add as addSelect, cancel as cancelSelect } from "actions/selectActions";
+import htmlTagTypes from 'constants/htmlTag/Types';
 import ChipInput from 'material-ui-chip-input';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@material-ui/core';
 

@@ -1,4 +1,4 @@
-import counterActionTypes from '../constants/counterActionTypes'
+import counterActionTypes from 'constants/counterActionTypes'
 
 export const increaseCount = () => ({
   type: counterActionTypes.INCREASE

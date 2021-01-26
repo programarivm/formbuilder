@@ -1,4 +1,4 @@
-import inputActionTypes from '../constants/inputActionTypes';
+import inputActionTypes from 'constants/inputActionTypes';
 
 const initialState = {
   open: false,

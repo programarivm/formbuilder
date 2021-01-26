@@ -1,4 +1,4 @@
-import inputActionTypes from '../constants/inputActionTypes'
+import inputActionTypes from 'constants/inputActionTypes'
 
 export const add = (payload) => ({
   type: inputActionTypes.ADD,

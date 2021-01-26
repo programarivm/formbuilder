@@ -1,4 +1,4 @@
-import selectActionTypes from '../constants/selectActionTypes';
+import selectActionTypes from 'constants/selectActionTypes';
 
 const initialState = {
   open: false,

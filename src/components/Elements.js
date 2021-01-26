@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { set as setInput } from "../actions/inputActions";
-import { set as setSelect } from "../actions/selectActions";
-import { set as setTextarea } from "../actions/textareaActions";
-import htmlTagTypes from '../constants/htmlTag/Types';
+import { set as setInput } from "actions/inputActions";
+import { set as setSelect } from "actions/selectActions";
+import { set as setTextarea } from "actions/textareaActions";
+import htmlTagTypes from 'constants/htmlTag/Types';
 import DndCard from './Dnd/Card';
 
 export default function Elements() {

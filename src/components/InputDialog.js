@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { increaseCount } from "../actions/counterActions";
-import { add as addInput, cancel as cancelInput } from "../actions/inputActions";
-import htmlTagTypes from '../constants/htmlTag/Types';
-import htmlTagInputTypes from '../constants/htmlTag/input/Types';
+import { increaseCount } from "actions/counterActions";
+import { add as addInput, cancel as cancelInput } from "actions/inputActions";
+import htmlTagTypes from 'constants/htmlTag/Types';
+import htmlTagInputTypes from 'constants/htmlTag/input/Types';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, InputLabel, MenuItem,
   TextField, Select } from '@material-ui/core';
 

@@ -1,4 +1,4 @@
-import textareaActionTypes from '../constants/textareaActionTypes';
+import textareaActionTypes from 'constants/textareaActionTypes';
 
 const initialState = {
   open: false,
