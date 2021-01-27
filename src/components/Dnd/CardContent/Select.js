@@ -1,10 +1,14 @@
 import React from "react";
 import { CardContent } from '@material-ui/core';
 import HtmlTag from './HtmlTag';
+import Typography from '@material-ui/core/Typography';
 
 const Select = ({ elem }) => {
   return (
     <CardContent>
+      <Typography gutterBottom variant="h6">
+        Select
+      </Typography>
       <HtmlTag
         name="label"
         text={elem.label}
