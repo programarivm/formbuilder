@@ -145,11 +145,14 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
+              <DndProvider backend={HTML5Backend}>
+                <Elements />
+              </DndProvider>
+            </Grid>
+            <Grid item xs={6}>
               <Paper className={classes.paper}>
-                <DndProvider backend={HTML5Backend}>
-                  <Elements />
-                </DndProvider>
+                To do: Display the HTML form here!
               </Paper>
             </Grid>
           </Grid>
