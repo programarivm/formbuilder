@@ -11,8 +11,10 @@ import Elements from './Elements';
 import InputDialog from './InputDialog';
 import SelectDialog from './SelectDialog';
 import TextareaDialog from './TextareaDialog';
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+
+var HtmlToReactParser = require('html-to-react').Parser;
 
 const drawerWidth = 240;
 
@@ -105,6 +107,10 @@ export default function Dashboard() {
     setOpen(false);
   };
 
+  const htmlInput = '<div><h1>To do</h1><p>Display the HTML form here!</p></div>';
+  const htmlToReactParser = new HtmlToReactParser();
+  const reactElement = htmlToReactParser.parse(htmlInput);
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -152,7 +158,7 @@ export default function Dashboard() {
             </Grid>
             <Grid item xs={6}>
               <Paper className={classes.paper}>
-                To do: Display the HTML form here!
+                {reactElement}
               </Paper>
             </Grid>
           </Grid>
