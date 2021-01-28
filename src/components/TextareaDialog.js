@@ -27,6 +27,7 @@ export default function TextareaDialog() {
   const handleTextareaChange = (event) => {
     setState({
       ...state,
+      html: `<label>${state.label}</label><textarea placeholder="${state.placeholder}" />`,
       order: count,
       [event.target.name] : event.target.value
     });

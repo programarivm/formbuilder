@@ -35,6 +35,11 @@ export default function SelectDialog() {
     setState({
       ...state,
       order: count,
+      html: `<label>${state.label}</label>
+        <select>
+          <option disabled selected>${state.placeholder}</option>
+          ${(state.options).map(option => `<option>${option}</option>`)}
+        </select>`,
       options: [...state.options, chip]
     });
   }
