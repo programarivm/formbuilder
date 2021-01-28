@@ -9,9 +9,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, InputLabel, 
 
 export default function InputDialog() {
   const [state, setState] = useState({
-    html: null,
     label: null,
-    order: null,
     placeholder: null,
     type: htmlTagTypes.INPUT,
     subtype: htmlTagInputTypes.TEXT
@@ -26,15 +24,18 @@ export default function InputDialog() {
   const handleInputChange = (event) => {
     setState({
       ...state,
-      html: `<label>${state.label}</label><input type="${state.subtype}" placeholder="${state.placeholder}" />`,
-      order: count,
-      [event.target.name] : event.target.value
+      [event.target.name]: event.target.value
     });
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addInput(state));
+    const input = {
+      ...state,
+      order: count,
+      html: `<label>${state.label}</label><input type="${state.subtype}" placeholder="${state.placeholder}" />`
+    };
+    dispatch(addInput(input));
     dispatch(increaseCount());
   }
 

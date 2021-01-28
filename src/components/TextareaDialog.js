@@ -13,7 +13,6 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function TextareaDialog() {
   const [state, setState] = useState({
     label: null,
-    order: null,
     placeholder: null,
     type: htmlTagTypes.TEXTAREA
   });
@@ -27,15 +26,18 @@ export default function TextareaDialog() {
   const handleTextareaChange = (event) => {
     setState({
       ...state,
-      html: `<label>${state.label}</label><textarea placeholder="${state.placeholder}" />`,
-      order: count,
-      [event.target.name] : event.target.value
+      [event.target.name]: event.target.value
     });
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    dispatch(addTextarea(state));
+    event.preventDefault();
+    const textarea = {
+      ...state,
+      order: count,
+      html: `<label>${state.label}</label><textarea placeholder="${state.placeholder}" />`
+    };
+    dispatch(addTextarea(textarea));
     dispatch(increaseCount());
   }
 

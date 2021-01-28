@@ -9,7 +9,6 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } 
 export default function SelectDialog() {
   const initialState = {
     label: null,
-    order: null,
     placeholder: null,
     options: [],
     type: htmlTagTypes.SELECT
@@ -26,7 +25,6 @@ export default function SelectDialog() {
   const handleSelectChange = (event) => {
     setState({
       ...state,
-      order: count,
       [event.target.name] : event.target.value
     });
   }
@@ -34,12 +32,6 @@ export default function SelectDialog() {
   const handleAddChip = (chip) => {
     setState({
       ...state,
-      order: count,
-      html: `<label>${state.label}</label>
-        <select>
-          <option disabled selected>${state.placeholder}</option>
-          ${(state.options).map(option => `<option>${option}</option>`)}
-        </select>`,
       options: [...state.options, chip]
     });
   }
@@ -47,14 +39,20 @@ export default function SelectDialog() {
   const handleDeleteChip = (chip) => {
     setState({
       ...state,
-      order: count,
       options: state.options.filter(item => item !== chip)
     });
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addSelect(state));
+    const options = (state.options).map(option => `<option>${option}</option>`).join('');
+    const select = {
+      ...state,
+      order: count,
+      html: `<label>${state.label}</label>
+        <select><option disabled selected>${state.placeholder}</option>${options}</select>`
+    };
+    dispatch(addSelect(select));
     dispatch(increaseCount());
     setState(initialState);
   }
