@@ -13,7 +13,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function TextareaDialog() {
   const [state, setState] = useState({
     label: null,
-    placeholder: null,
+    placeholder: '',
     type: htmlTagTypes.TEXTAREA
   });
 

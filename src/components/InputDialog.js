@@ -10,7 +10,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, InputLabel, 
 export default function InputDialog() {
   const [state, setState] = useState({
     label: null,
-    placeholder: null,
+    placeholder: '',
     type: htmlTagTypes.INPUT,
     subtype: htmlTagInputTypes.TEXT
   });

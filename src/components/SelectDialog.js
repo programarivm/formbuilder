@@ -9,7 +9,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } 
 export default function SelectDialog() {
   const initialState = {
     label: null,
-    placeholder: null,
+    placeholder: 'Select an option',
     options: [],
     type: htmlTagTypes.SELECT
   };
