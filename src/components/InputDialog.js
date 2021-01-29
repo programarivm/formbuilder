@@ -8,12 +8,14 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, InputLabel, 
   TextField, Select } from '@material-ui/core';
 
 export default function InputDialog() {
-  const [state, setState] = useState({
+  const initialState = {
     label: null,
     placeholder: '',
     type: htmlTagTypes.INPUT,
     subtype: htmlTagInputTypes.TEXT
-  });
+  };
+
+  const [state, setState] = useState(initialState);
 
   const count = useSelector(state => state.counter.count);
 
@@ -37,6 +39,7 @@ export default function InputDialog() {
     };
     dispatch(addInput(input));
     dispatch(increaseCount());
+    setState(initialState);
   }
 
   return (

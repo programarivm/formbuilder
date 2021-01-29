@@ -11,11 +11,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function TextareaDialog() {
-  const [state, setState] = useState({
+  const initialState = {
     label: null,
     placeholder: '',
     type: htmlTagTypes.TEXTAREA
-  });
+  };
+
+  const [state, setState] = useState(initialState);
 
   const count = useSelector(state => state.counter.count);
 
@@ -39,6 +41,7 @@ export default function TextareaDialog() {
     };
     dispatch(addTextarea(textarea));
     dispatch(increaseCount());
+    setState(initialState);
   }
 
   return (
