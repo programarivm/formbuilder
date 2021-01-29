@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/formbuilder/static/js/main.db77569d.chunk.js",
-    "main.js.map": "/formbuilder/static/js/main.db77569d.chunk.js.map",
+    "main.js": "/formbuilder/static/js/main.2088b4f2.chunk.js",
+    "main.js.map": "/formbuilder/static/js/main.2088b4f2.chunk.js.map",
     "runtime-main.js": "/formbuilder/static/js/runtime-main.befb0c24.js",
     "runtime-main.js.map": "/formbuilder/static/js/runtime-main.befb0c24.js.map",
     "static/js/2.7eb751b0.chunk.js": "/formbuilder/static/js/2.7eb751b0.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.befb0c24.js",
     "static/js/2.7eb751b0.chunk.js",
-    "static/js/main.db77569d.chunk.js"
+    "static/js/main.2088b4f2.chunk.js"
   ]
 }
