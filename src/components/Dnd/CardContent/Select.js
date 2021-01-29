@@ -1,18 +1,29 @@
 import React from "react";
+import { makeStyles } from '@material-ui/core/styles';
 import { CardContent } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
 var HtmlToReactParser = require('html-to-react').Parser;
 
+const useStyles = makeStyles((theme) => ({
+  formGroup: {
+    '& label': {
+      width: '100%'
+    },
+    '& select': {
+      width: '100%'
+    }
+  }
+}));
+
 const Select = ({ elem }) => {
+  const classes = useStyles();
   const htmlToReactParser = new HtmlToReactParser();
   const reactElement = htmlToReactParser.parse(elem.html);
 
   return (
     <CardContent>
-      <Typography gutterBottom variant="h6">
-        Select
-      </Typography>
-      {reactElement}
+      <div className={classes.formGroup}>
+        {reactElement}
+      </div>
     </CardContent>
   );
 };

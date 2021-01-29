@@ -107,7 +107,7 @@ export default function Dashboard() {
     setOpen(false);
   };
 
-  const htmlInput = '<div><h1>To do</h1><p>Display the HTML form here!</p></div>';
+  const htmlInput = '<div><h1>To do</h1><p>Display the entire HTML form here!</p></div>';
   const htmlToReactParser = new HtmlToReactParser();
   const reactElement = htmlToReactParser.parse(htmlInput);
 
