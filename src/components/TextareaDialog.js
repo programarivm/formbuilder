@@ -37,7 +37,7 @@ export default function TextareaDialog() {
     const textarea = {
       ...state,
       order: count,
-      html: `<label>${state.label}</label><textarea placeholder="${state.placeholder}" />`
+      html: `<label>${state.label}</label><textarea placeholder="${state.placeholder}"></textarea>`
     };
     dispatch(addTextarea(textarea));
     dispatch(increaseCount());

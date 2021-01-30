@@ -2,8 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { AppBar, Container, Divider, Drawer, Grid, IconButton, List, Paper,
-  Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Container, Divider, Drawer, Grid, IconButton, List, Toolbar, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import MainListItems from './MainListItems';
@@ -85,12 +84,6 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
-  paper: {
-    padding: theme.spacing(2),
-    display: 'flex',
-    overflow: 'auto',
-    flexDirection: 'column',
-  },
   fixedHeight: {
     height: 240,
   },
@@ -152,9 +145,7 @@ export default function Dashboard() {
               </DndProvider>
             </Grid>
             <Grid item xs={6}>
-              <Paper className={classes.paper}>
-                <TheForm />
-              </Paper>
+              <TheForm />
             </Grid>
           </Grid>
         </Container>
