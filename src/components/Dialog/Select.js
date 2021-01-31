@@ -6,7 +6,7 @@ import htmlTagTypes from 'constants/htmlTag/Types';
 import ChipInput from 'material-ui-chip-input';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@material-ui/core';
 
-export default function SelectDialog() {
+export default function Select() {
   const initialState = {
     label: null,
     placeholder: 'Select an option',

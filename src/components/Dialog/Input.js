@@ -7,7 +7,7 @@ import htmlTagInputTypes from 'constants/htmlTag/input/Types';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, InputLabel, MenuItem,
   TextField, Select } from '@material-ui/core';
 
-export default function InputDialog() {
+export default function Input() {
   const initialState = {
     label: null,
     placeholder: '',
