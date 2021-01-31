@@ -6,7 +6,7 @@ import { AppBar, Container, Divider, Drawer, Grid, IconButton, List, Toolbar, Ty
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import MainListItems from './MainListItems';
-import Elements from './Elements';
+import DndCards from './DndCards';
 import InputDialog from './InputDialog';
 import SelectDialog from './SelectDialog';
 import TextareaDialog from './TextareaDialog';
@@ -141,7 +141,7 @@ export default function Dashboard() {
           <Grid container spacing={3}>
             <Grid item xs={6}>
               <DndProvider backend={HTML5Backend}>
-                <Elements />
+                <DndCards />
               </DndProvider>
             </Grid>
             <Grid item xs={6}>

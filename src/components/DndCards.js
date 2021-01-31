@@ -6,7 +6,7 @@ import { set as setTextarea } from "actions/textareaActions";
 import htmlTagTypes from 'constants/htmlTag/Types';
 import DndCard from './Dnd/Card';
 
-export default function Elements() {
+export default function DndCards() {
   const dispatch = useDispatch();
 
   const state = useSelector(state => state);
