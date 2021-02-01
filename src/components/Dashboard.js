@@ -139,12 +139,12 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={12} md={6}>
               <DndProvider backend={HTML5Backend}>
                 <DndCards />
               </DndProvider>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={12} md={6}>
               <TheForm />
             </Grid>
           </Grid>
