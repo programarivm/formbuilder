@@ -78,11 +78,6 @@ const DndCard = ({ index, elem, moveCard }) => {
 
   drag(drop(ref));
 
-  const handleEdit = (event, elem) => {
-    event.preventDefault();
-    console.log('TODO ...');
-  }
-
   const handleDelete = (event, elem) => {
     event.preventDefault();
     switch (elem.type) {
@@ -120,13 +115,6 @@ const DndCard = ({ index, elem, moveCard }) => {
       <CardActionArea>
         {renderContent(elem)}
         <CardActions>
-          <Button
-            size="small"
-            color="primary"
-            onClick={(e) => handleEdit(e, elem)}
-          >
-            Edit
-          </Button>
           <Button
             size="small"
             color="primary"

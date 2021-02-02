@@ -4,9 +4,8 @@ import { increaseCount } from "actions/counterActions";
 import { add as addInput, cancel as cancelInput } from "actions/inputActions";
 import htmlTagTypes from 'constants/htmlTag/Types';
 import htmlTagInputTypes from 'constants/htmlTag/input/Types';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core';
-
-import InputForm from 'components/Dialog/Form/Input';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, InputLabel, MenuItem,
+  TextField, Select } from '@material-ui/core';
 
 export default function Input() {
   const initialState = {
@@ -23,6 +22,13 @@ export default function Input() {
   const open = useSelector(state => state.input.open);
 
   const dispatch = useDispatch();
+
+  const handleInputChange = (event) => {
+    setState({
+      ...state,
+      [event.target.name]: event.target.value
+    });
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -42,7 +48,41 @@ export default function Input() {
         <DialogTitle id="form-dialog-title">Input</DialogTitle>
         <DialogContent>
           <form onSubmit={handleSubmit}>
-            <InputForm state={state} />
+            <InputLabel>Type</InputLabel>
+            <Select
+              value={state.subtype}
+              name="subtype"
+              fullWidth
+              required
+              onChange={handleInputChange}
+            >
+              <MenuItem value="" disabled>
+                Select a type
+              </MenuItem>
+              {Object.keys(htmlTagInputTypes).map((key, i) => (
+                <MenuItem key={i} value={htmlTagInputTypes[key]}>
+                  {key.charAt(0) + key.substring(1).toLowerCase()}
+                </MenuItem>
+              ))}
+            </Select>
+            <TextField
+              autoFocus
+              margin="dense"
+              name="label"
+              label="Label"
+              type="text"
+              fullWidth
+              required
+              onChange={handleInputChange}
+            />
+            <TextField
+              margin="dense"
+              name="placeholder"
+              label="Placeholder"
+              type="text"
+              fullWidth
+              onChange={handleInputChange}
+            />
             <DialogActions>
               <Button color="primary" type="submit">
                 Add
