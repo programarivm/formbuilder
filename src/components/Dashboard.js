@@ -5,9 +5,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { AppBar, Container, Drawer, Grid, List, Toolbar, Typography } from '@material-ui/core';
 import MainListItems from './MainListItems';
 import DndCards from './DndCards';
-import InputDialog from './Dialog/Input';
-import SelectDialog from './Dialog/Select';
-import TextareaDialog from './Dialog/Textarea';
+import AddInputDialog from './Dialog/Add/Input';
+import AddSelectDialog from './Dialog/Add/Select';
+import AddTextareaDialog from './Dialog/Add/Textarea';
 import TheForm from './TheForm';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -98,9 +98,9 @@ export default function Dashboard() {
           </Grid>
         </Container>
       </main>
-      <InputDialog />
-      <SelectDialog />
-      <TextareaDialog />
+      <AddInputDialog />
+      <AddSelectDialog />
+      <AddTextareaDialog />
     </div>
   );
 }
