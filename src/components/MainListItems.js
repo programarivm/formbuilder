@@ -7,6 +7,7 @@ import { Divider, ListItem, ListItemIcon, ListItemText } from '@material-ui/core
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import ListIcon from '@material-ui/icons/List';
 import SubjectIcon from '@material-ui/icons/Subject';
+import Link from 'next/link';
 
 const MainListItems = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,9 @@ const MainListItems = () => {
   return (
     <div>
       <ListItem button>
-        <ListItemText primary="About" />
+        <Link href="/">
+          <ListItemText primary="About" />
+        </Link>
       </ListItem>
       <Divider />
       <ListItem button onClick={() => dispatch(clickInput())}>

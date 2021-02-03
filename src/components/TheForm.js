@@ -54,25 +54,25 @@ const TheForm = () => {
     return elem;
   });
 
-  const html = elems.map(elem => elem.html).join('');
-
-  const textToCopy = prettify(`<form>${html}</form>`);
-
-  if (html) {
-    return <div>
-      <Paper className={classes.paper}>
-        <CopyToClipboard text={textToCopy}>
-          <Button
-            color="default"
-            size="small"
-            startIcon={<FileCopyOutlinedIcon />}
-          >
-            Copy text
-          </Button>
-        </CopyToClipboard>
-        <pre>{textToCopy}</pre>
-      </Paper>
-    </div>
+  if (process.browser) {
+    const html = elems.map(elem => elem.html).join('');
+    const textToCopy = prettify(`<form>${html}</form>`);
+    if (html) {
+      return <div>
+        <Paper className={classes.paper}>
+          <CopyToClipboard text={textToCopy}>
+            <Button
+              color="default"
+              size="small"
+              startIcon={<FileCopyOutlinedIcon />}
+            >
+              Copy text
+            </Button>
+          </CopyToClipboard>
+          <pre>{textToCopy}</pre>
+        </Paper>
+      </div>
+    }
   }
 
   return null;

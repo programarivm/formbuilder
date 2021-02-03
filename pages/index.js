@@ -1,7 +1,8 @@
-const Index = () => (
+const About = () => (
   <div>
-    <h1>Home page</h1>
+    <h1>About</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
 )
 
-export default Index
+export default About
