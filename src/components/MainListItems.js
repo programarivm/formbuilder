@@ -3,9 +3,7 @@ import { useDispatch } from "react-redux";
 import { click as clickInput } from "actions/inputActions";
 import { click as clickSelect } from "actions/selectActions";
 import { click as clickTextarea } from "actions/textareaActions";
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import { Divider, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import ListIcon from '@material-ui/icons/List';
 import SubjectIcon from '@material-ui/icons/Subject';
@@ -15,6 +13,10 @@ const MainListItems = () => {
 
   return (
     <div>
+      <ListItem button>
+        <ListItemText primary="About" />
+      </ListItem>
+      <Divider />
       <ListItem button onClick={() => dispatch(clickInput())}>
         <ListItemIcon>
           <TextFieldsIcon />
