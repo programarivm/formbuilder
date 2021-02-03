@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/formbuilder/static/js/main.4d976b38.chunk.js",
-    "main.js.map": "/formbuilder/static/js/main.4d976b38.chunk.js.map",
+    "main.js": "/formbuilder/static/js/main.bc95c6b0.chunk.js",
+    "main.js.map": "/formbuilder/static/js/main.bc95c6b0.chunk.js.map",
     "runtime-main.js": "/formbuilder/static/js/runtime-main.befb0c24.js",
     "runtime-main.js.map": "/formbuilder/static/js/runtime-main.befb0c24.js.map",
-    "static/js/2.063a7a30.chunk.js": "/formbuilder/static/js/2.063a7a30.chunk.js",
-    "static/js/2.063a7a30.chunk.js.map": "/formbuilder/static/js/2.063a7a30.chunk.js.map",
+    "static/js/2.18a9cf9a.chunk.js": "/formbuilder/static/js/2.18a9cf9a.chunk.js",
+    "static/js/2.18a9cf9a.chunk.js.map": "/formbuilder/static/js/2.18a9cf9a.chunk.js.map",
     "index.html": "/formbuilder/index.html",
-    "static/js/2.063a7a30.chunk.js.LICENSE.txt": "/formbuilder/static/js/2.063a7a30.chunk.js.LICENSE.txt"
+    "static/js/2.18a9cf9a.chunk.js.LICENSE.txt": "/formbuilder/static/js/2.18a9cf9a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.befb0c24.js",
-    "static/js/2.063a7a30.chunk.js",
-    "static/js/main.4d976b38.chunk.js"
+    "static/js/2.18a9cf9a.chunk.js",
+    "static/js/main.bc95c6b0.chunk.js"
   ]
 }
