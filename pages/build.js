@@ -4,7 +4,7 @@ import Dashboard from 'components/Dashboard'
 
 const Build = () => {
   return <Provider store={store}>
-      <Dashboard />
+    <Dashboard />
   </Provider>
 }
 
