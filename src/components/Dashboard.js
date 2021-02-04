@@ -1,5 +1,5 @@
-import { Container, Grid, List } from '@material-ui/core';
-import MainListItems from './MainListItems';
+import { Container, Grid } from '@material-ui/core';
+import Buttons from './Buttons';
 import DndCards from './DndCards';
 import AddInputDialog from './Dialog/Add/Input';
 import AddSelectDialog from './Dialog/Add/Select';
@@ -12,12 +12,10 @@ export default function Dashboard() {
   return (
     <div>
       <Container maxWidth="lg">
-        <List>
-          <MainListItems />
-        </List>
-      </Container>
-      <Container maxWidth="lg">
         <Grid container spacing={3}>
+          <Grid item xs={12} style={{ marginTop: 15 }}>
+            <Buttons />
+          </Grid>
           <Grid item xs={12} sm={12} md={6}>
             <DndProvider backend={HTML5Backend}>
               <DndCards />
