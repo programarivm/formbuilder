@@ -37,28 +37,28 @@ const About = () => {
         </Typography>
       </Box>
       <Grid container spacing={5}>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={12} md={3}>
           <Paper className={classes.paper}>
             <Typography variant="body1">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Typography>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={12} md={3}>
           <Paper className={classes.paper}>
             <Typography variant="body1">
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Typography>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={12} md={3}>
           <Paper className={classes.paper}>
             <Typography variant="body1">
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </Typography>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={12} md={3}>
           <Paper className={classes.paper}>
             <Typography variant="body1">
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
