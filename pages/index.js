@@ -20,8 +20,7 @@ const About = () => {
 
   return <div>
     <Head>
-      <title>HTML Form Builder</title>
-      <meta name="description" content="HTML form builder to design nice forms with no code." />
+      <title>HTML Form Builder | About</title>
     </Head>
     <MainNav />
     <Container maxWidth="lg">
