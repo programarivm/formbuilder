@@ -10,7 +10,7 @@ const MainNav = () => {
           <Grid container justify="space-between">
             <Grid item>
               <Link href="/">
-                <img src="/logo.png" alt="HTML Form Builder" />
+                <img src="logo.png" alt="HTML Form Builder" />
               </Link>
             </Grid>
             <Grid item style={{ marginTop: 10 }}>
