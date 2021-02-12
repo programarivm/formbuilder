@@ -8,28 +8,34 @@ import SubjectIcon from '@material-ui/icons/SubjectTwoTone';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    marginTop: 90,
+    paddingTop: 35,
+    paddingBottom: 35,
+    backgroundColor: '#e8e8e8'
+  },
+  company: {
+    padding: theme.spacing(3),
+  },
+}));
 
 const Footer = () => {
+  const classes = useStyles();
+
   return (
-    <Grid container style={{
-        marginTop: 90,
-        paddingTop: 35,
-        paddingBottom: 35,
-        backgroundColor: '#e8e8e8'
-      }}
-    >
-      <Grid container item xs={6} style={{ paddingTop: 35 }}>
-        <Grid item xs={3}></Grid>
-        <Grid item xs={6}>
-          <Typography color="secondary" variant="subtitle2">
-            Company Name Goes Here,<br/>
-            Something here to give the footer a purpose!<br/>
-            Company Number: 1234567890
-          </Typography>
-        </Grid>
-        <Grid item xs={3}></Grid>
+    <Grid container className={classes.container}>
+      <Grid item xs={12} sm={12} md={1} />
+      <Grid item xs={12} sm={12} md={5} className={classes.company}>
+        <Typography color="secondary" variant="subtitle2">
+          Company Name Goes Here,<br/>
+          Something here to give the footer a purpose!<br/>
+          Company Number: 1234567890
+        </Typography>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={12} sm={12} md={3}>
         <List component="nav" aria-label="legal">
           <ListItem button>
             <ListItemIcon>
@@ -51,7 +57,7 @@ const Footer = () => {
           </ListItem>
         </List>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={12} sm={12} md={3}>
         <List component="nav" aria-label="social">
           <ListItem button>
             <ListItemIcon>
