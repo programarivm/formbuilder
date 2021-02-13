@@ -1,13 +1,12 @@
 import React from 'react';
 import { Grid, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import EmojiFoodBeverage from '@material-ui/icons/EmojiFoodBeverageTwoTone';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import LockIcon from '@material-ui/icons/LockTwoTone';
 import SubjectIcon from '@material-ui/icons/SubjectTwoTone';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import YouTubeIcon from '@material-ui/icons/YouTube';
 import Typography from '@material-ui/core/Typography';
+import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -59,30 +58,22 @@ const Footer = () => {
       </Grid>
       <Grid item xs={12} sm={12} md={3}>
         <List component="nav" aria-label="social">
-          <ListItem button>
-            <ListItemIcon>
-              <TwitterIcon />
-            </ListItemIcon>
-            <ListItemText secondary="Twitter" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <FacebookIcon />
-            </ListItemIcon>
-            <ListItemText secondary="Facebook" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <InstagramIcon />
-            </ListItemIcon>
-            <ListItemText secondary="Instagram" />
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <YouTubeIcon />
-            </ListItemIcon>
-            <ListItemText secondary="YouTube" />
-          </ListItem>
+          <Link href="https://github.com/programarivm/formbuilder">
+            <ListItem button>
+              <ListItemIcon>
+                <GitHubIcon />
+              </ListItemIcon>
+              <ListItemText secondary="GitHub" />
+            </ListItem>
+          </Link>
+          <Link href="https://twitter.com/programarivm">
+            <ListItem button>
+              <ListItemIcon>
+                <TwitterIcon />
+              </ListItemIcon>
+              <ListItemText secondary="Twitter" />
+            </ListItem>
+          </Link>
         </List>
       </Grid>
     </Grid>
