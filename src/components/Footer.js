@@ -29,7 +29,7 @@ const Footer = () => {
       <Grid item xs={12} sm={12} md={1} />
       <Grid item xs={12} sm={12} md={5} className={classes.company}>
         <Typography color="secondary" variant="subtitle2">
-          Company Name Goes Here,<br/>
+          HTML Form Builder,<br/>
           Something here to give the footer a purpose!<br/>
           Company Number: 1234567890
         </Typography>
