@@ -3,6 +3,7 @@ import store from 'store'
 import Head from 'next/head'
 import Dashboard from 'components/Dashboard'
 import MainNav from 'components/MainNav'
+import Footer from 'components/Footer'
 
 const Build = () => {
   return <Provider store={store}>
@@ -11,6 +12,7 @@ const Build = () => {
     </Head>
     <MainNav />
     <Dashboard />
+    <Footer />
   </Provider>
 }
 
