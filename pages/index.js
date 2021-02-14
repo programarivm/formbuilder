@@ -32,7 +32,7 @@ const About = () => {
           Build HTML forms without writing any code at all
         </Typography>
         <Typography variant="h5" component="h3" align="center">
-          Just drag and drop with this absolutely amazing web app
+          Just drag and drop
         </Typography>
       </Box>
       <Grid container spacing={5}>
