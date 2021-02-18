@@ -44,12 +44,14 @@ const Footer = () => {
               </ListItemIcon>
               <ListItemText secondary="Terms and Conditions" />
             </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <LockIcon />
-              </ListItemIcon>
-              <ListItemText secondary="Privacy Policy" />
-            </ListItem>
+            <Link href="/privacy-policy">
+              <ListItem button>
+                <ListItemIcon>
+                  <LockIcon />
+                </ListItemIcon>
+                <ListItemText secondary="Privacy Policy" />
+              </ListItem>
+            </Link>
             <Link href="/cookies-policy">
               <ListItem button>
                 <ListItemIcon>
