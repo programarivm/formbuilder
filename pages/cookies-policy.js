@@ -28,14 +28,14 @@ const CookiesPolicy = () => {
         <Typography variant="h4" component="h1" align="center" gutterBottom>
           Cookies Policy
         </Typography>
-        <Typography variant="caption" component="p" align="center" gutterBottom>
+        <Typography variant="caption" component="p" align="center">
           Last Revised: February 18, 2021
         </Typography>
       </Box>
       <Grid container spacing={5}>
         <Grid item xs={12} sm={12} md={12}>
           <Paper className={classes.paper}>
-            <Typography variant="body1">
+            <Typography variant="p">
               Cookies? Mmm, they are delicious! This website does not collect personal data through third-party cookies.
             </Typography>
           </Paper>
