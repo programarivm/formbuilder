@@ -50,12 +50,14 @@ const Footer = () => {
               </ListItemIcon>
               <ListItemText secondary="Privacy Policy" />
             </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <EmojiFoodBeverage />
-              </ListItemIcon>
-              <ListItemText secondary="Cookies Policy" />
-            </ListItem>
+            <Link href="/cookies-policy">
+              <ListItem button>
+                <ListItemIcon>
+                  <EmojiFoodBeverage />
+                </ListItemIcon>
+                <ListItemText secondary="Cookies Policy" />
+              </ListItem>
+            </Link>
           </List>
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
