@@ -38,12 +38,14 @@ const Footer = () => {
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
           <List component="nav" aria-label="legal">
-            <ListItem button>
-              <ListItemIcon>
-                <SubjectIcon />
-              </ListItemIcon>
-              <ListItemText secondary="Terms and Conditions" />
-            </ListItem>
+            <Link href="/terms">
+              <ListItem button>
+                <ListItemIcon>
+                  <SubjectIcon />
+                </ListItemIcon>
+                <ListItemText secondary="Terms of Use" />
+              </ListItem>
+            </Link>
             <Link href="/privacy-policy">
               <ListItem button>
                 <ListItemIcon>
