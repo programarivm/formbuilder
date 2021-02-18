@@ -32,7 +32,7 @@ const Terms = () => {
           Last Revised: February 18, 2021
         </Typography>
       </Box>
-      <Grid container spacing={5}>
+      <Grid container>
         <Grid item xs={12} sm={12} md={12}>
           <Paper className={classes.paper}>
             <Typography variant="p" paragraph>
