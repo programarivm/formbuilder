@@ -28,11 +28,11 @@ const About = () => {
         <Typography variant="h3" component="h1" align="center" gutterBottom>
           It's a piece of cake!
         </Typography>
-        <Typography variant="h4" component="h2" align="center" gutterBottom>
-          Build HTML forms without writing any code at all
+        <Typography variant="h5" component="h2" align="center" gutterBottom>
+          Build HTML forms without writing any code at all.
         </Typography>
-        <Typography variant="h5" component="h3" align="center">
-          Just drag and drop
+        <Typography variant="h5" component="h2" align="center" gutterBottom>
+          Just add, drag and drop gracious, graceful boxes.
         </Typography>
       </Box>
       <Grid container spacing={5}>
