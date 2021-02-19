@@ -21,7 +21,7 @@ const About = () => {
           Build HTML forms without writing any code at all.
         </Typography>
         <Typography variant="h5" component="h2" align="center" gutterBottom>
-          Just add, drag and drop gracious, graceful boxes.
+          Just add, drag and drop, gracious, graceful cards.
         </Typography>
       </Box>
       <Grid container spacing={5}>
