@@ -1,19 +1,8 @@
-import { makeStyles } from '@material-ui/core/styles'
 import { Box, Container, Grid, Paper, Typography } from '@material-ui/core'
 import MainNav from 'components/MainNav'
 import Footer from 'components/Footer'
 import Head from 'next/head'
-
-const useStyles = makeStyles((theme) => ({
-  box: {
-    padding: theme.spacing(2),
-    margin: theme.spacing(2),
-  },
-  paper: {
-    padding: theme.spacing(2),
-    color: theme.palette.text.secondary,
-  },
-}));
+import useStyles from '../styles/pages'
 
 const PrivacyPolicy = () => {
   const classes = useStyles()
