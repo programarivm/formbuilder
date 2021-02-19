@@ -2,7 +2,7 @@ import { Box, Container, Grid, Paper, Typography } from '@material-ui/core'
 import MainNav from 'components/MainNav'
 import Footer from 'components/Footer'
 import Head from 'next/head'
-import { makeStyles } from '@material-ui/core/styles'
+import useStyles from '../styles/pages'
 
 const Terms = () => {
   const classes = useStyles()
