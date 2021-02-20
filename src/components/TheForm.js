@@ -1,9 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { click as clickLink } from "actions/linkActions";
 import { Button, ButtonGroup, Paper } from '@material-ui/core';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import LinkIcon from '@material-ui/icons/Link';
+import CreateLinkDialog from './Dialog/Create/Link';
 
 const prettify = (str) => {
   const div = document.createElement('div');
@@ -43,6 +45,8 @@ const TheForm = () => {
 
   const state = useSelector(state => state);
 
+  const dispatch = useDispatch();
+
   const elems = [
     ...state.input.items,
     ...state.select.items,
@@ -74,12 +78,14 @@ const TheForm = () => {
               color="default"
               size="small"
               startIcon={<LinkIcon />}
+              onClick={() => dispatch(clickLink())}
             >
-              Create Link
+              Link
             </Button>
           </ButtonGroup>
           <pre>{textToCopy}</pre>
         </Paper>
+        <CreateLinkDialog />
       </div>
     }
   }
