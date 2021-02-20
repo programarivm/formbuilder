@@ -71,7 +71,7 @@ const TheForm = () => {
                 size="small"
                 startIcon={<FileCopyOutlinedIcon />}
               >
-                Copy text
+                Copy
               </Button>
             </CopyToClipboard>
             <Button
