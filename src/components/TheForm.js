@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { useSelector } from "react-redux";
-import { Paper } from '@material-ui/core';
+import { Button, ButtonGroup, Paper } from '@material-ui/core';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Button from '@material-ui/core/Button';
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
+import LinkIcon from '@material-ui/icons/Link';
 
 const prettify = (str) => {
   const div = document.createElement('div');
@@ -60,15 +60,24 @@ const TheForm = () => {
     if (html) {
       return <div>
         <Paper className={classes.paper}>
-          <CopyToClipboard text={textToCopy}>
+          <ButtonGroup>
+            <CopyToClipboard text={textToCopy}>
+              <Button
+                color="default"
+                size="small"
+                startIcon={<FileCopyOutlinedIcon />}
+              >
+                Copy text
+              </Button>
+            </CopyToClipboard>
             <Button
               color="default"
               size="small"
-              startIcon={<FileCopyOutlinedIcon />}
+              startIcon={<LinkIcon />}
             >
-              Copy text
+              Create Link
             </Button>
-          </CopyToClipboard>
+          </ButtonGroup>
           <pre>{textToCopy}</pre>
         </Paper>
       </div>
